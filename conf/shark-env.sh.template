@@ -34,8 +34,9 @@ export HIVE_HOME=""
 
 # For running Shark in distributed mode, set the following:
 #export HADOOP_HOME=""
-#export SPARK_HOME=""
 #export MASTER=""
+# Not required if using Yarn mode:
+#export SPARK_HOME=""
 # Only required if using Mesos:
 #export MESOS_NATIVE_LIBRARY=/usr/local/lib/libmesos.so 
 

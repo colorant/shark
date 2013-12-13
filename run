@@ -41,9 +41,11 @@ fi
 
 
 if [ -n "$MASTER" ] ; then
-  if [ -z $SPARK_HOME ] ; then
-    echo "No SPARK_HOME specified. Please set SPARK_HOME for cluster mode."
-    exit 1
+  if [ "$MASTER" != "yarn-client" ] && [ "$MASTER" != "yarn-standalone" ] ; then
+    if [ -z $SPARK_HOME ] ; then
+      echo "No SPARK_HOME specified. Please set SPARK_HOME for non-yarn cluster mode."
+      exit 1
+    fi
   fi
 fi
 
